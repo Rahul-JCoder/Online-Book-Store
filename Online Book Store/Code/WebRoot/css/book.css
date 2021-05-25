@@ -1,0 +1,274 @@
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #FFF;
+}
+
+/* ~~ Element/tag selectors ~~ */
+ul, ol, dl { /* Due to variations between browsers, it's best practices to zero padding and margin on lists. For consistency, you can either specify the amounts you want here, or on the list items (LI, DT, DD) they contain. Remember that what you do here will cascade to the .nav list unless you write a more specific selector. */
+	padding: 0;
+	margin: 0;
+}
+h1, h2, h3, h4, h5, h6, p {
+	margin-top: 0;	 /* removing the top margin gets around an issue where margins can escape from their containing div. The remaining bottom margin will hold it away from any elements that follow. */
+	padding-right: 15px;
+	padding-left: 15px; /* adding the padding to the sides of the elements within the divs, instead of the divs themselves, gets rid of any box model math. A nested div with side padding can also be used as an alternate method. */
+}
+a img { /* this selector removes the default blue border displayed in some browsers around an image when it is surrounded by a link */
+	border: none;
+}
+
+/* ~~ This fixed width container surrounds all other divs ~~ */
+.container {
+	width: 1000px;
+	background: #FFFFFF; /* the auto value on the sides, coupled with the width, centers the layout */
+	margin-top: 0;
+	margin-right: auto;
+	margin-bottom: 0;
+	margin-left: auto;
+}
+.sidebar2 #arrival a {
+	font-size: 20px;
+	font-weight: bold;
+	color: #FFECF5;
+	text-decoration: none;
+	font-family: "Times New Roman", Times, serif;
+	text-align: center;
+}
+
+/* ~~ The header is not given a width. It will extend the full width of your layout. It contains an image placeholder that should be replaced with your own linked logo. ~~ */
+.header {
+	width: 1000px;
+	height: 75px;
+}
+
+/* ~~ These are the columns for the layout. ~~ 
+
+1) Padding is only placed on the top and/or bottom of the divs. The elements within these divs have padding on their sides. This saves you from any "box model math". Keep in mind, if you add any side padding or border to the div itself, it will be added to the width you define to create the *total* width. You may also choose to remove the padding on the element in the div and place a second div within it with no width and the padding necessary for your design.
+
+2) No margin has been given to the columns since they are all floated. If you must add margin, avoid placing it on the side you're floating toward (for example: a right margin on a div set to float right). Many times, padding can be used instead. For divs where this rule must be broken, you should add a "display:inline" declaration to the div's rule to tame a bug where some versions of Internet Explorer double the margin.
+
+3) Since classes can be used multiple times in a document (and an element can also have multiple classes applied), the columns have been assigned class names instead of IDs. For example, two sidebar divs could be stacked if necessary. These can very easily be changed to IDs if that's your preference, as long as you'll only be using them once per document.
+
+4) If you prefer your nav on the right instead of the left, simply float these columns the opposite direction (all right instead of all left) and they'll render in reverse order. There's no need to move the divs around in the HTML source.
+
+*/
+.sidebar1 {
+	float: left;
+	width: 250px;
+	height: 700px;
+	background-color: #FFECF5;
+}
+.text_content {
+	float: left;
+	height: 700px;
+	width: 500px;
+	background-color: #FFECF5;
+}
+.sidebar2 {
+	float: left;
+	width: 250px;
+	padding-right: 0;
+	padding-left: 0;
+	height: 700px;
+	color: #000;
+	font-weight: bold;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-align: center;
+	font-size: 15px;
+	background-color: #FFECF5;
+}
+#form1 p {
+	font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+	font-style: italic;
+}
+#form1 p #submit2 {
+	height: 25px;
+	width: 33px;
+}
+#form1 p #submit3 {
+	height: 25px;
+	width: 33px;
+}
+.sidebar2 #form1 {
+	height: 200px;
+}
+.sidebar1 #Login_ID {
+}
+.login_box {
+	height: 250px;
+	width: 250px;
+	margin-top: 10px;
+	color: #820041;
+}
+.register_box {
+	height: 400px;
+	width: 250px;
+	margin-top: 10px;
+	color: #820041;
+}
+#Login_ID p a {
+	color: #820041;
+	text-decoration: none;
+}
+.login_box #Login_ID table {
+	height: 100px;
+}
+.content {
+	width: 1000px;
+	padding: 0px;
+}
+
+/* ~~ This grouped selector gives the lists in the .content area space ~~ */
+.content ul, .content ol { 
+	padding: 0 15px 15px 40px; /* this padding mirrors the right padding in the headings and paragraph rule above. Padding was placed on the bottom for space between other elements on the lists and on the left to create the indention. These may be adjusted as you wish. */
+}
+
+/* ~~ The footer styles ~~ */
+.footer {
+	padding: 0px;
+	position: relative;/* this gives IE6 hasLayout to properly clear */
+	clear: both; /* this clear property forces the .container to understand where the columns end and contain them */
+	background-color: #820041;
+	height: 50px;
+	width: 1000px;
+}
+.header_new {
+	height: 75px;
+	width: 1000px;
+	background-color: #820041;
+	margin-right: auto;
+	margin-left: auto;
+}
+.logo {
+	width: 100px;
+	height: 75px;
+	float: left;
+
+	background-color: #820041;
+}
+.homebars {
+	float: right;
+	height: 30px;
+	width: 460px;
+	margin-top: 44px;
+}
+.button {
+	float: left;
+	height: 20px;
+	width: 100px;
+	margin: 5px;
+	background-color: #FFE1F0;
+	text-align: center;
+}
+.title {
+	float: left;
+	height: 75px;
+	width: 375px;
+	background-color: #820041;
+	background-image: url(images/title.jpg);
+}
+#form1 #fiction {
+	width: 180px;
+	float: left;
+}
+#form1 p #NonFiction {
+	width: 180px;
+	float: left;
+}
+#form1 p #seachbar {
+	width: 200px;
+	float: left;
+}
+.but {
+	float: left;
+	height: 20px;
+	width: 30px;
+	background-image: url(images/123.png);
+}
+.searchdiv1 #seachbar {
+	float: left;
+	width: 190px;
+}
+.searchdiv #seachbar {
+	float: left;
+	width: 200px;
+	margin-left: 8px;
+}
+.searchdiv {
+	height: 30px;
+	width: 250px;
+	margin-top: 20px;
+}
+.sidebar2 p {
+	margin-top: 8px;
+}
+.sidebar2 #form_bar {
+	height: 200px;
+	width: 250px;
+}
+#arrival {
+	height: 20px;
+	width: 175px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #820041;
+	color: #FFECF5;
+	text-align: center;
+	padding: 2px;
+	font-weight: bold;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	margin-top: 50px;
+}
+#gallery {
+	height: 20px;
+	width: 175px;
+	margin-right: auto;
+	margin-left: auto;
+	background-color: #820041;
+	color: #FFECF5;
+	text-align: center;
+	padding: 2px;
+	font-weight: bold;
+	font-family: "Times New Roman", Times, serif;
+	font-size: 18px;
+	margin-top: 50px;
+}
+.form_text {
+	margin-top: 80px;
+}
+
+/* ~~ Miscellaneous float/clear classes ~~ */
+.fltrt {  /* this class can be used to float an element right in your page. The floated element must precede the element it should be next to on the page. */
+	float: right;
+	margin-left: 8px;
+}
+.fltlft { /* this class can be used to float an element left in your page. The floated element must precede the element it should be next to on the page. */
+	float: left;
+	margin-right: 8px;
+}
+.clearfloat { /* this class can be placed on a <br /> or empty div as the final element following the last floated div (within the .container) if the .footer is removed or taken out of the .container */
+	clear:both;
+	height:0;
+	font-size: 1px;
+	line-height: 0px;
+}
+.searchdiv1 {
+	height: 30px;
+	width: 250px;
+	margin-top: 20px;
+}
+#searchbar {
+	width: 190px;
+	float: left;
+}
+#Gallery_images {
+	height: 200px;
+	width: 250px;
+	background-color: #820041;
+}
+.homebars .button a {
+	color: #820041;
+	text-decoration: none;
+}
